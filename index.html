@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>ToDo List</h1>
+    </header>
+
+    <main>
+        <section aria-labelledby="todo-section-title">
+            <h2 id="todo-section-title" class="visually-hidden">Manage your tasks</h2>
+
+            <!-- Form -->
+            <form id="todo-form" onsubmit="event.preventDefault(); addTodo();">
+                <label for="task" class="visually-hidden">New Task</label>
+                <input type="text" id="task" name="task" placeholder="Enter a new task..." required autocomplete="off">
+                <button type="submit" id="add-btn">Add</button>
+            </form>
+
+            <!-- Action Buttons -->
+            <div id="actions">
+                <button id="clear-all-btn" type="button">Clear All</button>
+                <button id="sort-asc-btn" type="button">Sort A-Z</button>
+                <button id="sort-desc-btn" type="button">Sort Z-A</button>
+                <button id="export-btn" type="button">Export</button>
+                <button id="import-btn" type="button">Import</button>
+                <input type="file" id="import-file" accept="application/json" style="display:none;">
+            </div>
+
+            <!-- List -->
+            <ul id="todo-list" aria-live="polite"></ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>Simple ToDo App</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
